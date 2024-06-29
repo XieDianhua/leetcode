@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/dianhua/leetcode/list/src/reverseList.cpp" "CMakeFiles/reverseList.dir/src/reverseList.cpp.o" "gcc" "CMakeFiles/reverseList.dir/src/reverseList.cpp.o.d"
+  "/cygdrive/d/学习/leetcode/list/src/reverseList.cpp" "CMakeFiles/reverseList.dir/src/reverseList.cpp.o" "gcc" "CMakeFiles/reverseList.dir/src/reverseList.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

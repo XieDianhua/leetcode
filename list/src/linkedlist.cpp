@@ -9,93 +9,103 @@ public:
         ListNode(int x) : val(x), next(nullptr) {}
     };
 
-    MyLinkedList() :size(0), head(nullptr) {
+    // MyLinkedList() :size(0), head(nullptr) {    //无头结点，head指向空指针
+    // }
+
+    MyLinkedList() {
+        this->size = 0;
+        this->head = new ListNode(0); //建立头结点（开辟一块内存空间，head将指向这块空间）
     }
 
     int get(int index) {
-        ListNode* p;
-        int cnt = 0;
+        // 1. 判断索引是否合法
+        if (index < 0 || index >= size)
+            return -1;
 
-        p = this->head;
-        while (p && cnt < index) {
-            p = p->next;
-            cnt++;
+        // 2. 查找指定索引的结点
+        ListNode* current = head;
+        for (int i = 0; i <= index; i++) {
+            current = current->next;
         }
 
-        if ((cnt == index) && p)
-            return p->val;
-        else
-            return -1;
+        // 3. 返回结点值
+        return current->val;
     }
 
     void addAtHead(int val) {
-        ListNode* p = new ListNode(val);
-        p->next = head;
-        head = p;
-        size++;
+        addAtIndex(0, val);
     }
 
     void addAtTail(int val) {
-        ListNode* p = new ListNode(val);
-
-        ListNode* current = head;
-        while (current && current->next) {  /* 查找最后一个结点 */
-            current = current->next;
-        }
-        current->next = p;
-        size++;
+        addAtIndex(size, val);
     }
 
     void addAtIndex(int index, int val) {
-        if (index > this->size)
+        //1. 判断索引是否合法
+        if (index > size)
             return;
+        if (index < 0)
+            index = 0;
 
-        if (index == this->size) {
-            addAtTail(val);
-            return;
-        }
+        size++;
 
-        ListNode* current, * p = new ListNode(val);
+        //2. 设置头结点为当前结点
+        ListNode* current = head; //current指向了头结点
         int cnt = 0;
 
-        current = this->head;
-        while (current && current->next && cnt < index - 1) {
-            current = current->next;
+        /* index=2
+        cnt   current     T/F
+        0      头结点    0<2  T
+        1        0       1<2  T
+        2        1       2<2  F
+        */
+
+        //3. 遍历链表到索引为index的前一个结点
+        while (current->next != nullptr && cnt < index) { //不用判断current != nullptr头结点内存空间肯定有
             cnt++;
+            current = current->next;
         }
-        if (current) {
-            p->next = current->next;
-            current->next = p;
-            size++;
-        }
+
+        //4. 插入结点
+        ListNode* toAdd = new ListNode(val);
+        toAdd->next = current->next;
+        current->next = toAdd;
     }
 
     void deleteAtIndex(int index) {
-        if (index >= this->size || index < 0)
-            return; //如果索引无效，不执行删除操作
-
-        //如果删除的是头结点
-        if (index == 0) {
-            ListNode* toDelete = head;
-            head = head->next;
-            delete toDelete;
-        }
-        else {
-            ListNode* current = head;
-            int i = 0;
-            while (i < index - 1) { //遍历到index-1的位置，需要知道前驱结点
-                current = current->next;
-                i++;
-            }
-            ListNode* toDelete = current->next;
-            current->next = current->next->next;
-            delete toDelete;
-        }
+        // 1. 判断索引是否合法
+        if (index >= size || index < 0)
+            return;
 
         size--;
-    }
 
+        // 2. 设置头结点为当前结点
+        ListNode* current = head;
+        int cnt = 0;
+        /*
+        index = 2
+        cnt     current     T/F
+        0       头结点      0<2 T
+        1       0           1<2 T
+        2       1           2<2 F
+         */
+
+         // 3. 遍历范围为0~size-1，最后一个结点在1.已经排除了
+        while (cnt < index) {
+            cnt++;
+            current = current->next;
+        }
+
+        // 4. 删除索引为index的结点
+        ListNode* toDelete = current->next;
+        current->next = current->next->next;
+        delete toDelete;
+    }
 private:
     int size;
     ListNode* head;
 };
+
+int main() {
+
+}

@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/removeElements.dir/src/removeElements.cpp.o"
   "CMakeFiles/removeElements.dir/src/removeElements.cpp.o.d"
-  "removeElements"
+  "libremoveElements.dll.a"
+  "removeElements.exe"
   "removeElements.pdb"
 )
 

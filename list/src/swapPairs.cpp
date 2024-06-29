@@ -1,31 +1,26 @@
-struct ListNode {
-    int val;
-    ListNode* next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode* next) : val(x), next(next) {}
-};
+#include"list.hpp"
 
 ListNode* swapPairs(ListNode* head) {
-    //创建虚拟头结点
-    ListNode* dummyHead = new ListNode(0);
-    dummyHead->next = head;
-    ListNode* current = dummyHead;//当前到达的结点，开始时为虚拟头结点
+    // 1. 创建头结点，并将头指针指向头结点，同时将头结点设置为当前结点
+    ListNode* dummyHead = new ListNode(0, head);
+    ListNode* current = dummyHead;
 
-    while (current->next && current->next->next) { //终止条件：current后面没有节点或者只有一个节点
-        //定义当前节点的后两个节点
+    // 2. 遍历链表，直到当前结点后面没有或者只有一个结点
+    while ((current->next != nullptr) && (current->next->next != nullptr)) {
         ListNode* node1 = current->next;
         ListNode* node2 = current->next->next;
 
+        // 3. 交换结点
         current->next = node2;
         node1->next = node2->next;
         node2->next = node1;
 
+        // 4. 把交换后的第二个结点设为当前结点
         current = node1;
     }
 
+    // 5. 返回交换后链表头指针
     ListNode* res = dummyHead->next;
     delete dummyHead;
-
     return res;
 }

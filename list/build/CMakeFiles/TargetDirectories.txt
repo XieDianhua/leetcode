@@ -1,5 +1,3 @@
-/home/dianhua/leetcode/list/build/CMakeFiles/removeElements.dir
-/home/dianhua/leetcode/list/build/CMakeFiles/linkedlist.dir
-/home/dianhua/leetcode/list/build/CMakeFiles/reverseList.dir
-/home/dianhua/leetcode/list/build/CMakeFiles/edit_cache.dir
-/home/dianhua/leetcode/list/build/CMakeFiles/rebuild_cache.dir
+/cygdrive/d/学习/leetcode/list/build/CMakeFiles/removeElements.dir
+/cygdrive/d/学习/leetcode/list/build/CMakeFiles/edit_cache.dir
+/cygdrive/d/学习/leetcode/list/build/CMakeFiles/rebuild_cache.dir

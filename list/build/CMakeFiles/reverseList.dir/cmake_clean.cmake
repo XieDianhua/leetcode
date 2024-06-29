@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/reverseList.dir/src/reverseList.cpp.o"
   "CMakeFiles/reverseList.dir/src/reverseList.cpp.o.d"
-  "reverseList"
+  "libreverseList.dll.a"
+  "reverseList.exe"
   "reverseList.pdb"
 )
 

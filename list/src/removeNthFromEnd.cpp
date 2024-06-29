@@ -1,12 +1,8 @@
-struct ListNode {
-    int val;
-    ListNode* next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode* next) : val(x), next(next) {}
-};
+#include"list.hpp"
+
 
 ListNode* removeNthFromEnd(ListNode* head, int n) {
+    // 1. 创建头结点，并将头指针指向头结点，同时将头结点设置为当前结点
     ListNode* dummyHead = new ListNode(0, head);
     ListNode* current = dummyHead;
 
