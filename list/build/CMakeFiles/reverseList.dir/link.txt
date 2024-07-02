@@ -1,1 +1,0 @@
-/usr/bin/c++.exe -Wl,--enable-auto-import CMakeFiles/reverseList.dir/src/reverseList.cpp.o -o reverseList.exe -Wl,--out-implib,libreverseList.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

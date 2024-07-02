@@ -1,1 +1,0 @@
-/usr/bin/c++.exe -Wl,--enable-auto-import CMakeFiles/linkedlist.dir/src/linkedlist.cpp.o -o linkedlist.exe -Wl,--out-implib,liblinkedlist.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

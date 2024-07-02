@@ -1,3 +1,0 @@
-/cygdrive/d/学习/leetcode/list/build/CMakeFiles/removeElements.dir
-/cygdrive/d/学习/leetcode/list/build/CMakeFiles/edit_cache.dir
-/cygdrive/d/学习/leetcode/list/build/CMakeFiles/rebuild_cache.dir
