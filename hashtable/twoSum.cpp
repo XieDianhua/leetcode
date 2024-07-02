@@ -23,12 +23,21 @@ using namespace std;
 vector<int> twoSum(vector<int>& nums, int target) {
     // 1. 创建哈希表
     unordered_map<int, int> hashtable;
+
+    // 2. 遍历数组中的每一个元素
     for (int i = 0; i < nums.size(); ++i) {
-        auto it = hashtable.find(target - nums[i]); //找到target-x则返回地址，未找到返回尾迭代器
+        // 3. 查找哈希表中是否存在满足条件的另一个数
+        auto it = hashtable.find(target - nums[i]);
+
+        // 4. 如果找到了，返回这两个数索引
         if (it != hashtable.end()) {
-            return { it->second, i }; //返回map中的value，即索引
+            return { it->second, i };
         }
+
+        // 5. 如果没有找到，将当前数和它的索引存入哈希表
         hashtable[nums[i]] = i;
     }
+
+    // 6. 如果没有找到任何两个数的和等于目标值，返回空的 vector
     return {};
 }
