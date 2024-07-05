@@ -19,7 +19,3 @@ int strStr(string haystack, string needle) {
 
     return -1;
 }
-
-int main() {
-
-}
