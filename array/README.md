@@ -1,14 +1,21 @@
 
-#
+# 概述
 
 ![image0001](images/image0001.png)
 
 ## 704 二分查找
 
-前提：有序数组、无重复元素
-关键点：边界条件（左闭右闭、左闭右开）
+![题目](images/image.png)
+
+[解答](src/search.cpp)
+
+前提：有序、无重复元素
+关键点：边界条件（左闭右闭还是左闭右开）
 
 ## 27 移除元素
+
+![alt text](<images/image copy.png>)
+[移除元素](src/removeElement.cpp)
 
 1. **关于循环条件 `<` 和 `<=` 的区别**：
    在外层循环中使用 `for (int i = 0; i < size; i++)` 而不是 `i <= size` 是因为数组（或向量）索引是从0开始的，最大有效索引是 `size - 1`。如果循环条件是 `i <= size`，那么在最后一次迭代时，`i` 会等于 `size`，这会导致访问 `nums[size]`，超出向量边界，从而引发未定义行为。因此，使用 `<` 确保了循环在安全范围内执行，恰当地遍历了向量的所有元素。
@@ -21,6 +28,8 @@
 
 ## 977 有序数组的平方
 
+![alt text](<images/image copy 2.png>)
+
 [源码](src/sortedSquares.cpp)
 注：排序算法归纳
 
@@ -28,8 +37,11 @@
 
 ## 209 长度最小的子数组
 
+![alt text](<images/image copy 4.png>)
+
 核心：起始指针、终止指针
 
 ## 59 螺旋矩阵II
 
+![alt text](<images/image copy 3.png>)
 在数学中，如果有一个数列从a开始，到b结束（a和b都包含在内），那么数列中元素的总数是b - a + 1
